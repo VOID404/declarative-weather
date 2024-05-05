@@ -1,0 +1,9 @@
+apiVersion: application.wsb.edu.pl/v1
+kind: WeatherApp
+metadata:
+  labels:
+    app.kubernetes.io/name: declarative-weather
+    app.kubernetes.io/managed-by: kustomize
+  name: weatherapp-sample
+spec:
+  # TODO(user): Add fields here
