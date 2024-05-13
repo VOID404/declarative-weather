@@ -1,0 +1,27 @@
+# permissions for end users to edit weatherapps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: declarative-weather
+    app.kubernetes.io/managed-by: kustomize
+  name: weatherapp-editor-role
+rules:
+- apiGroups:
+  - application.wsb.edu.pl
+  resources:
+  - weatherapps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - application.wsb.edu.pl
+  resources:
+  - weatherapps/status
+  verbs:
+  - get
